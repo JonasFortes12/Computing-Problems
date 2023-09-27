@@ -2,7 +2,7 @@ from listFiles import listFiles
 from readData import extract_graph_data
 import heap
 import avl
-import arvoreBinaria
+import BinaryTree as BinaryTree
 import tracemalloc
 import threading
 import time
@@ -20,7 +20,7 @@ def memoryFunction(funcao):
 global memory
 memory = 0
 arquivos = listFiles()
-tasks = {"Heap": heap.executar, "AVL": avl.executar, "ArvoreBinaria": arvoreBinaria.executar}
+tasks = {"Heap": heap.executar, "AVL": avl.executar, "ArvoreBinaria": BinaryTree.executar}
 for taskName, task in tasks.items():
     for tipo, instancias in arquivos.items():
         resultMem = []
