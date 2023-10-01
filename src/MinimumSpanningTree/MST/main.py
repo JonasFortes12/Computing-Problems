@@ -28,7 +28,7 @@ for taskName, task in tasks.items():
         numberNodesTot = []
         numberEdgesTot = []
         for instancia in instancias:
-            numNodes, graph_data, numEdges = extract_graph_data(os.path.join('./AGM', tipo, instancia))
+            numNodes, graph_data, numEdges = extract_graph_data(os.path.join(os.path.dirname(__file__), 'AGM', tipo, instancia))
             numberNodesTot.append(numNodes)
             numberEdgesTot.append(numEdges)
             tempoInicial = time.time()
@@ -42,6 +42,6 @@ for taskName, task in tasks.items():
             resultT.append(tempoDecorrido)
             resultMem.append(memoria)
 
-        pd.DataFrame({"Memory": resultMem, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(f"./results/{taskName}_{tipo}_memoria.csv")
-        pd.DataFrame({"Memory": resultT, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(f"./results/{taskName}_{tipo}_tempo.csv")
+        pd.DataFrame({"Memory": resultMem, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(os.path.join(os.path.dirname(__file__), 'results',f'{taskName}_{tipo}_memoria.csv'))
+        pd.DataFrame({"Memory": resultT, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(os.path.join(os.path.dirname(__file__), 'results',f'{taskName}_{tipo}_tempo.csv'))
         
