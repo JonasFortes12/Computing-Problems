@@ -11,9 +11,9 @@ def main(lista):
 
 
     for instancia in range(qtd_instancias):
-        arquivo = open(f"instancia_{instancia}.txt", "w")
+        arquivo = open(f"instancia_{lista[instancia]}.txt", "w")
         arquivo.write(str(lista_instancias[instancia]))
         arquivo.close()
 
-lista = [20,40,60,80,100]
+lista = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
 main(lista)
