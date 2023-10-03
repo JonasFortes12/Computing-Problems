@@ -1,4 +1,6 @@
 import random
+import os
+
 def main(lista):
     lista_instancias = []
     qtd_instancias = len(lista)
@@ -11,7 +13,7 @@ def main(lista):
 
 
     for instancia in range(qtd_instancias):
-        arquivo = open(f"instancia_{lista[instancia]}.txt", "w")
+        arquivo = open(os.path.join(os.path.abspath(os.path.dirname(__file__)),f"instancia_{lista[instancia]}.txt"), "w")
         arquivo.write(str(lista_instancias[instancia]))
         arquivo.close()
 
