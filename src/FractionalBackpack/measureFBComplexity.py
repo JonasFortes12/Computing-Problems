@@ -33,11 +33,13 @@ def measureFBComplexity(algorithm, instances, repeat, description):
     
         results.append(
             {
-            "Instância":int(instance), 
-            "Tempo":max(execTimes), 
+            "Instância":instance, 
+            "Tempo": round((max(execTimes) + min(execTimes))/2, 3), 
+            "Maior Tempo":round(max(execTimes), 3),
+            "Menor Tempo":round(min(execTimes), 3),
             "Memória":max(allMemories)}
             )
- 
+    
     pd.DataFrame(results).to_csv(os.path.join(os.path.abspath(os.path.dirname(__file__)),'results',f'MF_{description}_repeat_{repeat}.csv'), index=False)
         
         
