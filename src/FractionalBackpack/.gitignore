@@ -1,0 +1,3 @@
+*.csv
+!MF_itemA_repeat_3.csv
+instancias/*.txt

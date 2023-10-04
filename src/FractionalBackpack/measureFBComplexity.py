@@ -23,7 +23,7 @@ def measureFBComplexity(algorithm, instances, repeat, description):
             startTime = time.time()
             
             # Execeução do algoritmos da Mochila
-            algorithm(arr, 50)
+            algorithm(arr, instance/2)
             
             endTime = time.time()
             execTimes.append(endTime - startTime)
