@@ -1,4 +1,4 @@
-import os
+# import os
 # from code.loadpphData import loadpphData
 from code.maximizeRatioPPH import solve_PPH
 from code.sortAlgorithms.bubbleSort import bubbleSortByRatio
@@ -21,10 +21,10 @@ from code.generateRandomPairs import generateRandomPairs
 # print(S_asterisk)
 
 
-# instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
-instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000]
+instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
+# instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000]
 repeat = 3
 
-measurePPHComplexity(solve_PPH, instances, repeat, 'item01_9i')
+measurePPHComplexity(solve_PPH, instances, repeat, 'item02_BubbleSort')
 
 
