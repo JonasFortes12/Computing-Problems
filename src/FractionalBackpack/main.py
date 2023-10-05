@@ -26,7 +26,7 @@ from measureFBComplexity import measureFBComplexity
 instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
 repeat = 3
 
-measureFBComplexity(mf_a.construir_mochila, instances, repeat, 'itemA')
-# measureFBComplexity(mf_b.construir_mochila, [0, 1, 2, 3, 4], 7, 'itemB')
-# measureFBComplexity(mf_c.construir_mochila, [0, 1, 2, 3, 4], 7, 'itemC')
+# measureFBComplexity(mf_a.construir_mochila, instances, repeat, 'itemA')
+measureFBComplexity(mf_b.construir_mochila, instances, repeat, 'itemB')
+# measureFBComplexity(mf_c.construir_mochila, instances, repeat, 'itemC')
 
