@@ -2,22 +2,28 @@ import os
 from code.loadpphData import loadpphData
 from code.maximizeRatioPPH import solve_PPH
 from code.sortAlgorithms.bubbleSort import bubbleSortByRatio
+from measurePPHComplexity import measurePPHComplexity
 
 
-data = loadpphData(os.path.join(os.path.dirname(__file__), 'data', 'pph_100_01.dat'))
+# data = loadpphData(os.path.join(os.path.dirname(__file__), 'data', 'pph_1000_01.dat'))
 
-print(data)
+# print(data)
 
-print("___________________________________")
+# print("___________________________________")
 
-S_asterisk = solve_PPH(data[0], data[1:len(data)])
-print(S_asterisk)
+# S_asterisk = solve_PPH(data[0], data[1:len(data)])
+# print(S_asterisk)
 
-print("___________________________________")
+# print("___________________________________")
 
-S_asterisk = solve_PPH(data[0], bubbleSortByRatio(data[1:len(data)]))
-print(S_asterisk)
+# S_asterisk = solve_PPH(data[0], bubbleSortByRatio(data[1:len(data)]))
+# print(S_asterisk)
 
 
+instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
+# instances = [100, 200, 1000]
+repeat = 3
+
+measurePPHComplexity(solve_PPH, instances, repeat, 'item01')
 
 
