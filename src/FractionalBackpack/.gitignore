@@ -1,3 +1,5 @@
 *.csv
 !MF_itemA_repeat_3.csv
+!MF_itemB_repeat_3.csv
+!MF_itemC_repeat_3.csv
 instancias/*.txt
