@@ -2,14 +2,15 @@ import time
 import tracemalloc
 import pandas as pd
 import os
-from code.loadpphData import loadpphData
+# from code.loadpphData import loadpphData
+from code.generateRandomPairs import generateRandomPairs
 
 def measurePPHComplexity(algorithm, instances, repeat, description):
     
     results = []
     
     for instance in instances:
-        arr = loadpphData(os.path.join(os.path.dirname(__file__), 'data', f'pph_{instance}_01.dat'))
+        arr = generateRandomPairs(instance)
         execTimes = []
         allMemories = []
         

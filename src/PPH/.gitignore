@@ -1,0 +1,5 @@
+*.csv
+!results/item01/*
+!results/item02/*
+!results/item03/*
+!results/item04/*

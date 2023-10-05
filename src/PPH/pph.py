@@ -1,12 +1,13 @@
 import os
-from code.loadpphData import loadpphData
+# from code.loadpphData import loadpphData
 from code.maximizeRatioPPH import solve_PPH
 from code.sortAlgorithms.bubbleSort import bubbleSortByRatio
 from measurePPHComplexity import measurePPHComplexity
+from code.generateRandomPairs import generateRandomPairs
 
 
-# data = loadpphData(os.path.join(os.path.dirname(__file__), 'data', 'pph_1000_01.dat'))
 
+# data = generateRandomPairs(100)
 # print(data)
 
 # print("___________________________________")
@@ -20,10 +21,10 @@ from measurePPHComplexity import measurePPHComplexity
 # print(S_asterisk)
 
 
-instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
-# instances = [100, 200, 1000]
+# instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
+instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000]
 repeat = 3
 
-measurePPHComplexity(solve_PPH, instances, repeat, 'item01')
+measurePPHComplexity(solve_PPH, instances, repeat, 'item01_9i')
 
 
