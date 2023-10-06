@@ -48,7 +48,6 @@ for taskName, task in tasks.items():
             print(f"Tempo decorrido: {tempoDecorrido} segundos\nMemória: {memoria:.2f} MB\nNúmero de Nós: {numNodes}\nUsando a instância: {instancia}\n\n\n")
             resultT.append(tempoDecorrido)
             resultMem.append(memoria)
-            break
         pd.DataFrame({"Memory": resultMem, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(f"./results/{taskName}_{tipo}_memoria.csv")
         pd.DataFrame({"Memory": resultT, "Edges": numberEdgesTot, "Nodes": numberNodesTot}).to_csv(f"./results/{taskName}_{tipo}_tempo.csv")
         
