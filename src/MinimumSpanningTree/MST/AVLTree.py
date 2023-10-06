@@ -23,9 +23,44 @@ class AVLTree:
             return 0
         return node.height
 
+    def balance(self, node):
+        if node is None:
+            return 0
+        return self.height(node.left) - self.height(node.right)
+
     def update_height(self, node):
         if node is not None:
             node.height = 1 + max(self.height(node.left), self.height(node.right))
+
+    def rotate_left(self, y):
+        x = y.right
+        if x is None:
+            return y
+
+        T2 = x.left
+
+        x.left = y
+        y.right = T2
+
+        self.update_height(y)
+        self.update_height(x)
+
+        return x
+
+    def rotate_right(self, x):
+        y = x.left
+        if y is None:
+            return x
+
+        T2 = y.right
+
+        y.right = x
+        x.left = T2
+
+        self.update_height(x)
+        self.update_height(y)
+
+        return y
 
     def insert(self, node, aresta):
         if node is None:
@@ -37,6 +72,23 @@ class AVLTree:
             node.right = self.insert(node.right, aresta)
 
         self.update_height(node)
+
+        balance = self.balance(node)
+
+        # Rotações para balancear a árvore
+        if balance > 1:
+            if aresta.peso < node.left.aresta.peso:
+                return self.rotate_right(node)
+            else:
+                node.left = self.rotate_left(node.left)
+                return self.rotate_right(node)
+
+        if balance < -1:
+            if aresta.peso > node.right.aresta.peso:
+                return self.rotate_left(node)
+            else:
+                node.right = self.rotate_right(node.right)
+                return self.rotate_left(node)
 
         return node
 
@@ -78,6 +130,22 @@ class AVLTree:
         
         self.update_height(node)
 
+        balance = self.balance(node)
+
+        # Rotações para balancear a árvore após a exclusão
+        if balance > 1:
+            if self.balance(node.left) >= 0:
+                return self.rotate_right(node)
+            else:
+                node.left = self.rotate_left(node.left)
+                return self.rotate_right(node)
+
+        if balance < -1:
+            if self.balance(node.right) <= 0:
+                return self.rotate_left(node)
+            else:
+                node.right = self.rotate_right(node.right)
+                return self.rotate_left(node)
 
         return node
 
