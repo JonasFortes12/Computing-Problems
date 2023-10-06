@@ -3,19 +3,23 @@
 #  partições e, finalmente, combina as partições ordenadas com o pivô para obter a 
 #  lista ordenada em ordem decrescente.
 
-from code.ratio import ratio 
+from code.ratio import ratio
 
 def quickSortByRatio(arr):
     if len(arr) <= 1:
         return arr
 
-    # Escolhe um pivô (geralmente o último elemento)
-    pivot = arr[-1]
+    # Escolhe o pivô como o elemento do meio
+    middle = len(arr) // 2
+    pivot = arr[middle]
+
+    # Divide os elementos em duas partições - menores e maiores que o pivô
     left = []
     right = []
 
-    # Divide os elementos em duas partições - menores e maiores que o pivô
-    for i in range(len(arr) - 1):
+    for i in range(len(arr)):
+        if i == middle:
+            continue
         if ratio(arr[i]) > ratio(pivot):
             left.append(arr[i])
         else:

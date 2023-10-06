@@ -53,7 +53,7 @@ def measurePPHComplexity(algorithm, instances, sortedBy, repeat, description):
     
     fullEndTime = time.time()
     
-    print((fullEndTime - fullStartTime))
+    print(f'Tempo Total: {(fullEndTime - fullStartTime)} s')
 
 
 def sort(arr, sortedBy):
