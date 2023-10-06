@@ -2,11 +2,10 @@ import time
 import tracemalloc
 import pandas as pd
 import os
-# from code.loadpphData import loadpphData
 from code.generateRandomPairs import generateRandomPairs
 
 def measurePPHComplexity(algorithm, instances, repeat, description):
-    
+    fullStartTime = time.time()
     results = []
     
     for instance in instances:
@@ -38,5 +37,7 @@ def measurePPHComplexity(algorithm, instances, repeat, description):
             )
     
         pd.DataFrame(results).to_csv(os.path.join(os.path.abspath(os.path.dirname(__file__)),'results',f'PPH_{description}_repeat_{repeat}.csv'), index=False)
-        
-        
+    
+    fullEndTime = time.time()
+    
+    print((fullEndTime - fullStartTime))

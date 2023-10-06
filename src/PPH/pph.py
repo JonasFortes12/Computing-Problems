@@ -22,9 +22,9 @@ from code.generateRandomPairs import generateRandomPairs
 
 
 instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000, 5000000, 10000000]
-# instances = [100, 200, 1000, 2000, 5000, 10000, 50000, 100000, 1000000]
+# instances = [100, 200, 1000, 2000]
 repeat = 3
 
-measurePPHComplexity(solve_PPH, instances, repeat, 'item02_BubbleSort')
+measurePPHComplexity(solve_PPH, instances, repeat, 'item01_allNight')
 
 
